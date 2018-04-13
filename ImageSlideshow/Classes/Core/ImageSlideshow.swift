@@ -221,6 +221,7 @@ open class ImageSlideshow: UIView {
         layoutScrollView()
     }
 
+    public var pageControlBottomInset: CGFloat = 12.0
     open func layoutPageControl() {
         if case .hidden = self.pageControlPosition {
             pageControl.isHidden = true
@@ -228,7 +229,6 @@ open class ImageSlideshow: UIView {
             pageControl.isHidden = self.images.count < 2
         }
 
-        var pageControlBottomInset: CGFloat = 12.0
         if #available(iOS 11.0, *) {
             pageControlBottomInset += self.safeAreaInsets.bottom
         }
