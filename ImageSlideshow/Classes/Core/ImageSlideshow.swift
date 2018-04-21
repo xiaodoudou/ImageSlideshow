@@ -17,15 +17,15 @@ import UIKit
 public enum PageControlPosition {
     case hidden
     case insideScrollView
-    case underScrollView
+    case underScrollView(padding: CGFloat)
     case custom(padding: CGFloat)
 
     var bottomPadding: CGFloat {
         switch self {
         case .hidden, .insideScrollView:
             return 0.0
-        case .underScrollView:
-            return 30.0
+        case .underScrollView(let padding):
+            return padding ?? 30
         case .custom(let padding):
             return padding
         }
